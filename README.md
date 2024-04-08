@@ -92,9 +92,25 @@ Para dejar registro de vuestro planteamiento debéis crear un fichero que se lla
 
 ## Desarrollo.
 
-Debéis incluir un proyecto de Gradle con vuestra solución. No utilicéis ningún Object en este proyecto, para que tengáis que realizar correctamente la inyección de dependencia cuando sea necesario *(es decir, cuando tengamos que utilizar un servicio en alguna clase)*
+1. Debéis incluir un proyecto de Gradle con vuestra solución. No utilicéis ningún Object en este proyecto, para que tengáis que realizar correctamente la inyección de dependencia cuando sea necesario *(es decir, cuando tengamos que utilizar un servicio en alguna clase)*
 
-Si lo consideráis necesario para vuestra lógica podéis incluir `Companion object` en nivel de clase para crear alguna propiedad o método estático.
+2. Si lo consideráis necesario para vuestra lógica podéis incluir `Companion object` en nivel de clase para crear alguna propiedad o método estático.
 
-La aplicación estructurarse para que inicialmente desarrollemos todo sin ninguna librería externa, pero después ese servicio de impresión o registro pueda intercambiarse por uno que utilice la librería externa mordant para la visualización por consola de la información.
+3. La aplicación debe estructurarse para que inicialmente desarrollemos todo sin ninguna librería externa, pero después ese servicio de impresión o registro pueda intercambiarse por uno que utilice la librería externa KFormat ([](https://github.com/marcelmay/kformat)) para la visualización por consola de la información.
+
+4. Para que permita mostrar la información usando las librerías por defecto o kformat, al programa se le podrá indicar el formato en la línea de comando:
+
+   * -f tx: Utilizad la impresión del cartón con formato que se ha visto en [PROG-U7.2.-ConsolaTeclado/#151-formato-para-fecha-y-hora](https://revilofe.github.io/section1/u07/teoria/PROG-U7.2.-ConsolaTeclado/#151-formato-para-fecha-y-hora)
+
+   * -f kf: Utilizad la impresión del cartón con la librería externa KFormat, cómo podéis ver en los apuntes [PROG-U7.2.-ConsolaTeclado/#21-kotlin-console-output-formatting](https://revilofe.github.io/section1/u07/teoria/PROG-U7.2.-ConsolaTeclado/#21-kotlin-console-output-formatting) y también en la página web [](https://github.com/marcelmay/kformat). 
+
+6. Realizar un diseño basado en clases, haciendo uso de clases, herencia, interfaces, polimorfismo, etc. En la medida que sea necesario.
+
+7. Realizar un diseño del programa para mantener desacoplando la entrada, el procesamiento y la salida.
+
+8. Documentar el programa.
+
+9. El código realizado debe ser óptimo, limpio y estar comentado.
+
+10. Implementar Test.
 
